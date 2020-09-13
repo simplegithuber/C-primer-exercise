@@ -1,0 +1,46 @@
+//  比较两字符串是否相等
+#include <iostream>
+#include <string>
+
+using std::string;
+
+int main() {
+    string str1;
+    string str2;
+    std::cout << "请输入第一个字符串(都是小写字母) ：" << std::endl;
+    std::cin >> str1 >> std::endl;
+    std::cout << "请输入第二个字符串（都是小写字母） ：" << std::endl;
+    std::cin >> str2 >> std::endl;
+    std::cout << "两字符串比较结果 ：" << std::endl;
+    if(str1 == str2)
+        std::cout << "两个字符串相等" <<std::endl;
+    else if(str1 > str2)
+        std::cout << str1 << std::endl;
+    else 
+        std::cout << str2 << std::endl;
+    return 0;
+}
+
+----------------------------分割线
+//  比较两字符串是否等长
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cin;  using std::cout;
+using std::endl;
+
+int main() {
+    string s1, s2;
+    cout << "输入第一个字符串：" << endl;
+    getline(cin, s1);
+    cout << "输入第二个字符串：" << endl;
+    getline(cin, s2);
+    if(s1.size() == s2.size())
+        cout << "两字符串长度相等" << endl;
+    else if(s1.size() > s2.size())
+        cout << "长度更长的是：" << s1 << endl;
+    else
+        cout << "长度更长的是：" << s2 << endl;
+    return 0;
+}
