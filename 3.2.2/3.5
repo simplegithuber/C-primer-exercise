@@ -1,0 +1,53 @@
+//   从标准输入总读入多个字符串，并把他们连接在一起输出
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cin;  using std::cout;
+using std::endl;
+
+int main() {
+    char ch;
+    string s, splicing_s;
+    cout << "输入第一个字符串：" << endl;
+    while(cin >> s) {
+        splicing_s += s;
+        cout << "继续读入字符串(输入‘y’)或者退出读取（输入‘#’退出）" << endl;
+        cin >> ch;
+        if(ch == 'y')
+            cout << "请输入下一个字符" << endl;
+        else {
+            cout << splicing_s << endl;
+            break;
+        }
+    }
+    return 0;
+}
+
+-----------------分割线
+//   将上述输出每个字符串间用空格分开
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cin;  using std::cout;
+using std::endl;
+
+int main() {
+    char ch;
+    string s, splicing_s;
+    cout << "输入第一个字符串：" << endl;
+    while(cin >> s) {
+        splicing_s += s;
+        splicing_s += ' ';
+        cout << "继续读入字符串(输入‘y’)或者退出读取（输入‘#’退出）" << endl;
+        cin >> ch;
+        if(ch == 'y')
+            cout << "请输入下一个字符" << endl;
+        else {
+            cout << splicing_s << endl;
+            break;
+        }
+    }
+    return 0;
+}
