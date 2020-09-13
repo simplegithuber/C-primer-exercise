@@ -12,3 +12,20 @@ int main() {
     cout << str << endl;
     return 0;
 }
+
+----------------
+//  将循环控制变量的类型设为char
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::cin;  using std::cout;
+using std::endl;
+
+int main() {
+    string str("abcdefg");
+    for (char &c : str)       //  因为在这题中用auto系统自动给出的c的类型就是char，所以直接将类型定位char没问题 
+        c = 'x';
+    cout << str << endl;
+    return 0;
+}
