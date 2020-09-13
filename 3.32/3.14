@@ -1,3 +1,4 @@
+  //  vector对象是数字
 #include <iostream>
 #include <vector>
 
@@ -20,6 +21,36 @@ int main() {
             break;
     }
     for (auto c : v)
+        cout << c;
+    cout << endl;
+    return 0;
+}
+
+-------------------------
+  //  vector对象是字符
+#include <iostream>
+#include <vector>
+#include <string>
+  
+using std::vector;  using std::string;
+using std::cin;  using std::cout;
+using std::endl;
+  
+int main() {
+    vector<string> v;
+    char tem;
+    string str;
+    cout << "请输入一个字符串(允许输入空格)" << endl;
+    while(cin >> str) {
+        v.push_back(str);
+        cout << "若继续输入（输入y）" << "若停止输入并退出（输入#）" << endl;
+        cin >> tem;
+        if(tem == 'y')
+            cout << "请继续输入" << endl;
+        else
+            break;
+    }
+    for(auto c : v) 
         cout << c;
     cout << endl;
     return 0;
