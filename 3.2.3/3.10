@@ -1,0 +1,19 @@
+  // 本题采用的是范围for语句
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using std::string;
+using std::cin;  using std::cout;
+using std::endl;
+
+int main() {
+    string str;
+    cout << "请输入一个字符串（最好含有某些标点符号）：" << endl;
+    getline(cin, str);
+    for (auto& c : str) {
+        if(!ispunct(c))
+            cout << c;
+    }
+    return 0;
+}
