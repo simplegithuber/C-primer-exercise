@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#inlcude <vector>
+#include <vector>
 #include <cctype>
 
 using std::string;  using std::vector;
@@ -10,17 +10,20 @@ using std::endl;
 int main() {
     string str;
     vector<string> v;
+    char ch;
     cout << "请输入一组单词" << endl;
-    while(cin >> str) {
-        if(str.empty()) {
-            str = '\n';
-            v.push_back(str);
-        }
-        else if(toupper(str)) 
-            v.push_back(str);
+    while (cin >> str) {
+        for (auto& b : str)
+            b = toupper(b);
+        v.push_back(str);
+        cout << "是否继续输入词组（是（y），否（#））" << endl;
+        cin >> ch;
+        if (ch == '#')
+            break;
+        cout << "请继续输入" << endl;
     }
     for (auto c : v) {
         cout << c << endl;
     }
-    return 0
+    return 0;
 }
