@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+
+using std::vector;  using std::endl;
+using std::cin;  using std::cout;
+
+int main() {
+    vector<int> v;
+    vector<int> score(11, 0);
+    int i;
+    cout << "请输入数据（输入‘#’停止）" << endl;
+    while (cin >> i) {
+        v.push_back(i);
+    }
+    if (v.begin() == v.end()) {
+        cout << "没有数据输入" << endl;
+        return -1;
+    }
+    for (auto j = v.begin(); j != v.end(); j++) {
+    
+        //  ++item 和item++不同！！！ 
+          
+        ++*(score.begin() + *j / 10);
+    }
+    for (auto it = score.begin(); it != score.end(); it++)
+        cout << *it << endl;
+    return 0;
+}
