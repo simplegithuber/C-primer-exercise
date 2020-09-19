@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+
+using std::cin;  using std::cout;
+using std::vector;  using std::endl;
+
+int main() {
+    vector<int> v{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+     //  非常量引用的初始值必须是左值
+     //  所以要先将v.begin()赋值给左值
+    auto j = v.begin();
+    for (auto& i = j; i != v.end(); i++) {
+        *i *= 2;
+    }
+    for (auto c : v)
+        cout << c << endl;
+    return 0;
+}
