@@ -9,14 +9,42 @@ using std::endl;
 int main() {
     vector<int> v;
     int i;
-    char ch;
     cout << "请输入数字(输入‘#’退出)" << endl;
-    while(cin >> i) {
+    while (cin >> i) 
         v.push_back(i);
-    }
     for (auto it = v.begin(); it != v.end(); it++) {
-        auto j = ++it;
-        cout << j + it << endl;
+        auto j = it;
+      //   如果it = --v.end()，则j++就是v.end（），就会出错。
+        if (j == --v.end())
+            break;
+        j++;
+        cout << *j + *it << endl;
     }
     return 0;
 }
+
+--------------------------------
+//    输出一前一后数字的和
+#include <iostream>
+#include <vector>
+
+using std::vector;  using std::endl;
+using std::cin;  using std::cout;
+
+int main() {
+    vector<int> v;
+    int i;
+    cout << "请输入一组数（输入为‘#’时退出）" << endl;
+    while(cin >> i) 
+        v.push_back(i);
+    if(v.size() == 0) {
+        cout << "没有输入元素" << endl;
+        return -1;
+    }
+    for(auto j = v.begin(), auto k = --v.end(); j != k; j++, k--) {
+        cout << *j + *k << endl;
+    }
+    return 0;
+}
+//    不对！！！！
+//    不想再写了！！！
